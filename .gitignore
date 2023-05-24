@@ -1,2 +1,8 @@
 # Mac OS
 .DS_Store
+
+# Artifact
+simple-gin-server
+
+# Environment
+.envrc

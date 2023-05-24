@@ -1,17 +1,13 @@
 package main
 
 import (
-	"net/http"
-
-	"github.com/gin-gonic/gin"
+	"simple-gin-server/config"
+	"simple-gin-server/database"
+	"simple-gin-server/routes"
 )
 
-func HealthCheck(ctx *gin.Context) {
-	ctx.IndentedJSON(http.StatusOK, gin.H{"detail": "Success"})
-}
-
 func main() {
-	router := gin.Default()
-	router.GET("/health", HealthCheck)
-	router.Run("localhost:8080")
+	config.Init()
+	database.Init()
+	routes.Init()
 }
